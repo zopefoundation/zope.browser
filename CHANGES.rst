@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0.0 (unreleased)
+2.0.0 (2013-02-11)
 ------------------
 
 - Test coverage of 100% verified.
