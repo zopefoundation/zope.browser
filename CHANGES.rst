@@ -4,8 +4,7 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Added `tox.ini`.
 
 2.0.0 (2013-02-11)
 ------------------
