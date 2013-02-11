@@ -11,11 +11,7 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""
-Test Suite
-"""
-__docformat__ = "reStructuredText"
-
+"""Test Suite"""
 import doctest
 import unittest
 

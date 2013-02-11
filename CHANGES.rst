@@ -4,6 +4,10 @@ Changelog
 2.0.0 (unreleased)
 ------------------
 
+- Test coverage of 100% verified.
+
+- Added support for Python 3.3 and PyPy.
+
 - Dropped support for Python 2.4 and 2.5.
 
 1.3 (2010-04-30)
