@@ -4,7 +4,7 @@ Changelog
 2.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add Trove classifiers indicating CPython, 3.2 and PyPy support.
 
 
 2.0.1 (2013-02-11)
