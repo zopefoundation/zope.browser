@@ -20,7 +20,7 @@ def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 setup(name='zope.browser',
-    version='2.1.0.dev0',
+    version='2.1.0',
     author='Zope Foundation and Contributors',
     author_email='zope-dev@zope.org',
     description='Shared Zope Toolkit browser components',
