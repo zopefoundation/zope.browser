@@ -1,8 +1,10 @@
 Changelog
 =========
 
-2.0.3 (unreleased)
+2.1.0 (unreleased)
 ------------------
+
+- Add support for Python 3.4.
 
 - Add support for testing on Travis.
 

@@ -20,7 +20,7 @@ def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 setup(name='zope.browser',
-    version='2.0.3.dev0',
+    version='2.1.0.dev0',
     author='Zope Foundation and Contributors',
     author_email='zope-dev@zope.org',
     description='Shared Zope Toolkit browser components',
@@ -45,6 +45,7 @@ setup(name='zope.browser',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Natural Language :: English',
