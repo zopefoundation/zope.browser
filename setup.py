@@ -32,8 +32,8 @@ setup(
         read('CHANGES.rst')
     ),
     license='ZPL 2.1',
-    keywords = "zope browser component",
-    classifiers = [
+    keywords="zope browser component",
+    classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
@@ -50,7 +50,8 @@ setup(
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Topic :: Internet :: WWW/HTTP',
-        'Framework :: Zope3'],
+        'Framework :: Zope3',
+    ],
     url='https://zopebrowser.readthedocs.io',
     packages=find_packages('src'),
     package_dir={'': 'src'},
@@ -64,6 +65,9 @@ setup(
             'Sphinx',
             'sphinx_rtd_theme',
             'repoze.sphinx.autointerface',
+        ],
+        'test': [
+            'zope.testrunner',
         ],
     },
     test_suite='zope.browser.tests.test_suite',

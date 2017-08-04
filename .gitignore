@@ -13,5 +13,6 @@ parts
 .coverage
 coverage.xml
 nosetests.xml
+htmlcov/
 
 docs/_build/
