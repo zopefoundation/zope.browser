@@ -17,20 +17,20 @@ import os
 from setuptools import setup, find_packages
 
 def read(*rnames):
-    return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
+    with open(os.path.join(os.path.dirname(__file__), *rnames)) as f:
+        return f.read()
 
-setup(name='zope.browser',
+setup(
+    name='zope.browser',
     version='2.2.0.dev0',
     author='Zope Foundation and Contributors',
     author_email='zope-dev@zope.org',
     description='Shared Zope Toolkit browser components',
     long_description=(
         read('README.rst')
-        + '\n\n.. contents::\n\n' +
-        read('src', 'zope', 'browser', 'README.txt')
         + '\n\n' +
         read('CHANGES.rst')
-        ),
+    ),
     license='ZPL 2.1',
     keywords = "zope browser component",
     classifiers = [
@@ -51,15 +51,22 @@ setup(name='zope.browser',
         'Operating System :: OS Independent',
         'Topic :: Internet :: WWW/HTTP',
         'Framework :: Zope3'],
-    url='http://pypi.python.org/pypi/zope.browser',
+    url='https://zopebrowser.readthedocs.io',
     packages=find_packages('src'),
-    package_dir = {'': 'src'},
+    package_dir={'': 'src'},
     namespace_packages=['zope',],
     install_requires=[
         'setuptools',
         'zope.interface',
+    ],
+    extras_require={
+        'docs': [
+            'Sphinx',
+            'sphinx_rtd_theme',
+            'repoze.sphinx.autointerface',
         ],
+    },
     test_suite='zope.browser.tests.test_suite',
-    include_package_data = True,
-    zip_safe = False,
-    )
+    include_package_data=True,
+    zip_safe=False,
+)

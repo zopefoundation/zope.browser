@@ -18,10 +18,11 @@ import unittest
 
 def test_suite():
     return unittest.TestSuite((
-        doctest.DocFileSuite('README.txt',
+        doctest.DocFileSuite(
+            'README.rst',
             optionflags=doctest.NORMALIZE_WHITESPACE|doctest.ELLIPSIS,
-            ),
-        ))
+        ),
+    ))
 
 
 if __name__ == '__main__':
