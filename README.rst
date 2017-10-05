@@ -10,7 +10,7 @@
         :target: https://pypi.org/project/zope.browser/
         :alt: Supported Python versions
 
-.. image:: https://travis-ci.org/zopefoundation/zope.browser.png?branch=master
+.. image:: https://travis-ci.org/zopefoundation/zope.browser.svg?branch=master
         :target: https://travis-ci.org/zopefoundation/zope.browser
 
 .. image:: https://coveralls.io/repos/github/zopefoundation/zope.browser/badge.svg?branch=master
