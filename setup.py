@@ -22,7 +22,7 @@ def read(*rnames):
 
 setup(
     name='zope.browser',
-    version='2.3',
+    version='2.4.dev0',
     author='Zope Foundation and Contributors',
     author_email='zope-dev@zope.org',
     description='Shared Zope Toolkit browser components',
