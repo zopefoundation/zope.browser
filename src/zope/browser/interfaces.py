@@ -13,16 +13,16 @@
 ##############################################################################
 """Shared dependency less Zope3 brwoser components.
 """
-__docformat__ = 'restructuredtext'
-
 from zope.interface import Attribute
 from zope.interface import Interface
+
 
 class IView(Interface):
     """ Views are multi-adapters for context and request objects.
     """
     context = Attribute("The context object the view renders")
     request = Attribute("The request object driving the view")
+
 
 class IBrowserView(IView):
     """ Views which are specialized for requests from a browser
@@ -31,10 +31,12 @@ class IBrowserView(IView):
     etc.
     """
 
+
 class IAdding(IBrowserView):
     """ Multi-adapter interface for views which add items to containers.
 
-    The 'context' of the view must implement :obj:`zope.container.interfaces.IContainer`.
+    The 'context' of the view must implement
+    :obj:`zope.container.interfaces.IContainer`.
     """
 
     def add(content):
@@ -68,8 +70,7 @@ class IAdding(IBrowserView):
         """
 
     def nameAllowed():
-        """Return whether names can be input by the user.
-        """
+        """Return whether names can be input by the user."""
 
     def addingInfo():
         """Return add menu data as a sequence of mappings.
@@ -83,7 +84,9 @@ class IAdding(IBrowserView):
         """Return whether there is single menu item or not."""
 
     def hasCustomAddView():
-        "This should be called only if there is ``singleMenuItem`` else return 0"
+        """This should be called only if there is ``singleMenuItem``
+        else return 0.
+        """
 
 
 class ITerms(Interface):
@@ -103,10 +106,10 @@ class ITerms(Interface):
         LookupError is raised if there isn't a value in the source.
         """
 
+
 class ISystemErrorView(Interface):
     """Error views that can classify their contexts as system errors
     """
 
     def isSystemError():
-        """Return a boolean indicating whether the error is a system errror
-        """
+        """Return a boolean indicating whether the error is a system error."""
