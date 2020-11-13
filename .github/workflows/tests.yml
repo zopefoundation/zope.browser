@@ -5,6 +5,7 @@ on:
   schedule:
     - cron: '* * * * 0'  # run once a week (sunday)
 
+
 jobs:
   build:
     strategy:
@@ -20,7 +21,7 @@ jobs:
         - "pypy3"
         include:
           - python-version: "3.8"
-            env:
+            env-name:
               - lint
               - coverage
 
@@ -43,7 +44,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install tox coveralls
     - name: Test
-      run: tox -e ${{ matrix.env || 'py'}}
+      run: tox -e ${{ matrix.env-name || 'py'}}
     - name: Coverage
       run: coveralls
-      if: matrix.env == 'coverage'
+      if: matrix.env-name == 'coverage'
