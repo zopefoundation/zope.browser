@@ -22,9 +22,6 @@ jobs:
         - ["pypy2",    "pypy2", "pypy"]
         - ["pypy3",    "pypy3", "pypy3"]
         - ["coverage", "3.8",   "coverage"]
-        include:
-          - python-version: "3.8"
-            additional-envs: -e lint,coverage
 
     runs-on: ubuntu-latest
     name: ${{ matrix.config[0] }}
@@ -46,7 +43,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install tox coveralls
     - name: Test
-      run: tox -e py ${{ matrix.config[2] }}
+      run: tox -e ${{ matrix.config[2] }}
     - name: Coverage
       if: matrix.config[1] == 'coverage'
       run: coveralls
