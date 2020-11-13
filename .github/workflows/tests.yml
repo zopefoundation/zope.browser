@@ -50,4 +50,5 @@ jobs:
     - name: Coverage
       if: matrix.config[1] == 'coverage'
       run: coveralls
-      env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
