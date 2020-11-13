@@ -21,9 +21,9 @@ jobs:
         - "pypy3"
         include:
           - python-version: "3.8"
-            env-name:
-              - lint
-              - coverage
+            env-name: lint
+          - python-version: "3.8"
+            env-name: coverage
 
     runs-on: ubuntu-latest
     steps:
