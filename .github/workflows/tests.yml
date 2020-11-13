@@ -1,0 +1,49 @@
+name: run tests
+
+on:
+  push:
+  schedule:
+    - cron: '* * * * 0'  # run once a week (sunday)
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        python-version:
+        - "2.7"
+        - "3.5"
+        - "3.6"
+        - "3.7"
+        - "3.8"
+        - "3.9"
+        - "pypy2"
+        - "pypy3"
+        include:
+          - python-version: "3.8"
+            env:
+              - lint
+              - coverage
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Pip cache
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles(setup.*', 'tox.ini') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install coveralls
+    - name: Test
+      run: tox -e {{ matrix.env || 'py'}}
+    - name: Coverage
+      run: coveralls
+      if: {{ matrix.env == 'coverage'}}
