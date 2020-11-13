@@ -35,7 +35,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles(setup.*', 'tox.ini') }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('setup.*', 'tox.ini') }}
         restore-keys: |
           ${{ runner.os }}-pip-
     - name: Install dependencies
