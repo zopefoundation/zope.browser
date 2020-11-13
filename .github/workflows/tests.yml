@@ -43,7 +43,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install coveralls
     - name: Test
-      run: tox -e {{ matrix.env || 'py'}}
+      run: tox -e ${{ matrix.env || 'py'}}
     - name: Coverage
       run: coveralls
       if: matrix.env == 'coverage'
