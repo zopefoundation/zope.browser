@@ -5,7 +5,7 @@
 2.4 (unreleased)
 ================
 
-- Add support for Python 3.8.
+- Add support for Python 3.8 and 3.9.
 
 - Drop support for Python 3.4.
 
