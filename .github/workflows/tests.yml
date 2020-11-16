@@ -2,7 +2,7 @@ name: run tests
 
 on:
   push:
-  pull-request:
+  pull_request:
   schedule:
     - cron: '0 12 * * 0'  # run once a week on Sunday
 
