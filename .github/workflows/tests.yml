@@ -47,7 +47,7 @@ jobs:
     - name: Test
       run: tox -e ${{ matrix.config[2] }}
     - name: Coverage
-      if: matrix.config[1] == 'coverage'
+      if: matrix.config[2] == 'coverage'
       run: coveralls
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
