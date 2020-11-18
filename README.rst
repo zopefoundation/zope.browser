@@ -10,8 +10,8 @@
         :target: https://pypi.org/project/zope.browser/
         :alt: Supported Python versions
 
-.. image:: https://github.com/zopefoundation/zope.browser/workflows/run%20tests/badge.svg
-        :target: https://github.com/zopefoundation/zope.browser/actions?query=workflow%3A%22run+tests%22
+.. image:: https://github.com/zopefoundation/zope.browser/workflows/tests/badge.svg
+        :target: https://github.com/zopefoundation/zope.browser/actions?query=workflow%3A%22tests%22
 
 .. image:: https://coveralls.io/repos/github/zopefoundation/zope.browser/badge.svg?branch=master
         :target: https://coveralls.io/github/zopefoundation/zope.browser?branch=master
