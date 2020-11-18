@@ -12,26 +12,26 @@ jobs:
     strategy:
       matrix:
         config:
-        # [name, Python version, tox env]
-        - ["lint",     "3.8",   "lint"]
-        - ["2.7",      "2.7",   "py27"]
-        - ["3.5",      "3.5",   "py35"]
-        - ["3.6",      "3.6",   "py36"]
-        - ["3.7",      "3.7",   "py37"]
-        - ["3.8",      "3.8",   "py38"]
-        - ["3.9",      "3.9",   "py39"]
-        - ["pypy2",    "pypy2", "pypy"]
-        - ["pypy3",    "pypy3", "pypy3"]
-        - ["coverage", "3.8",   "coverage"]
+        # [Python version, tox env]
+        - ["3.8",   "lint"]
+        - ["2.7",   "py27"]
+        - ["3.5",   "py35"]
+        - ["3.6",   "py36"]
+        - ["3.7",   "py37"]
+        - ["3.8",   "py38"]
+        - ["3.9",   "py39"]
+        - ["pypy2", "pypy"]
+        - ["pypy3", "pypy3"]
+        - ["3.8",   "coverage"]
 
     runs-on: ubuntu-latest
-    name: ${{ matrix.config[0] }}
+    name: ${{ matrix.config[1] }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.config[1] }}
+        python-version: ${{ matrix.config[0] }}
     - name: Pip cache
       uses: actions/cache@v2
       with:
@@ -44,9 +44,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install tox coveralls coverage-python-version
     - name: Test
-      run: tox -e ${{ matrix.config[2] }}
+      run: tox -e ${{ matrix.config[1] }}
     - name: Coverage
-      if: matrix.config[2] == 'coverage'
+      if: matrix.config[1] == 'coverage'
       run: coveralls
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
