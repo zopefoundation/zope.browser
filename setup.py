@@ -59,9 +59,7 @@ setup(
     packages=find_packages('src'),
     package_dir={'': 'src'},
     namespace_packages=['zope'],
-    python_requires=','.join([
-        '>=3.7',
-    ]),
+    python_requires='>=3.7',
     install_requires=[
         'setuptools',
         'zope.interface',
