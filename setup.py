@@ -74,7 +74,6 @@ setup(
             'zope.testrunner',
         ],
     },
-    test_suite='zope.browser.tests.test_suite',
     include_package_data=True,
     zip_safe=False,
 )
