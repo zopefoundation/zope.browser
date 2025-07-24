@@ -14,7 +14,6 @@
 """Setup for zope.browser package"""
 import os
 
-from setuptools import find_packages
 from setuptools import setup
 
 
@@ -56,9 +55,6 @@ setup(
         'Framework :: Zope :: 3',
     ],
     url='https://zopebrowser.readthedocs.io',
-    packages=find_packages('src'),
-    package_dir={'': 'src'},
-    namespace_packages=['zope'],
     python_requires='>=3.9',
     install_requires=[
         'setuptools',
@@ -71,7 +67,7 @@ setup(
             'repoze.sphinx.autointerface',
         ],
         'test': [
-            'zope.testrunner',
+            'zope.testrunner >= 6.4',
         ],
     },
     include_package_data=True,
